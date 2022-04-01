@@ -39,14 +39,14 @@ docker-compose up -d
 chmod 777 -R backend/storage
 ```
 
-4. Execute the migrate command
-```sh
-sail artisan migrate
-```
-
-5. Run Test
+4. Run Test
 ```sh
 sail artisan test
+```
+
+5. Execute the migrate command
+```sh
+sail artisan migrate
 ```
 
 ## Run the application
