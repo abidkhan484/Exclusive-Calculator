@@ -27,7 +27,7 @@ chmod +x runserver.sh
 ./runserver.sh
 ```
 
-In case, `bash` is not accessible then the below command is required to run in the folders `backend` and `frontend` indivisually.
+In case, `bash` is not accessible then the below command is required to run in the folders `backend` and `frontend` individually.
 
 ```sh
 docker-compose up -d
