@@ -44,6 +44,11 @@ chmod 777 -R backend/storage
 sail artisan migrate
 ```
 
+5. Run Test
+```sh
+sail artisan test
+```
+
 ## Run the application
 
 ### Frontend

@@ -5,5 +5,6 @@ frontend="frontend"
 
 cd $frontend && docker-compose up -d && cd ..
 cd $backend && docker-compose up -d && cd ..
+cd $backend && sail artisan migrate && cd ..
 
 

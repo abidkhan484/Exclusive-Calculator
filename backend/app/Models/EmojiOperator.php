@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class EmojiOperator extends Model
 {
     use HasFactory;
+    protected $fillable = ['title', 'emoji_code', 'arithmetic_operator'];
 }
