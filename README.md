@@ -20,6 +20,7 @@ sudo usermod -aG docker your-user
 ```sh
 git clone https://github.com/abidkhan484/Exclusive-Calculator.git
 ```
+
 2. Set the execute permission to the `runserver.sh` file and execute it with the below commands.
 
 ```sh
@@ -32,9 +33,15 @@ In case, `bash` is not accessible then the below command is required to run in t
 ```sh
 docker-compose up -d
 ```
+
 3. Set the write permission to the storage folder in the backend. 
 ```sh
-chmod 775 -R backend/storage
+chmod 777 -R backend/storage
+```
+
+4. Execute the migrate command
+```sh
+sail artisan migrate
 ```
 
 ## Run the application
