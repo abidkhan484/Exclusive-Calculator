@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\ArithmeticController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/get-all-operators', [ArithmeticController::class, 'get_all_operators'])->name('get_all_operators');
+Route::post('/check-arithmetic-operation', [ArithmeticController::class, 'check_arithmetic_operations'])->name('check_arithmetic_operations');

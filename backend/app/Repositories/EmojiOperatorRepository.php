@@ -13,23 +13,25 @@ class EmojiOperatorRepository
         $this->emoji_operator = $emoji_operator;
     }
 
-    public function get_all_operators() : array
+    public function get_all_operators() : object
     {
         return $this->emoji_operator->get();
     }
 
-    public function get_operator_by_emoji_code(string $emoji_code) : array
+    public function get_operator_by_emoji_code(string $emoji_code) : string
     {
-        return $this->emoji_operator
+        $operator = $this->emoji_operator
                 ->where('emoji_code', $emoji_code)
-                ->get();
+                ->first('arithmetic_operator');
+        return !empty($operator) ? $operator->arithmetic_operator : "";
     }
 
-    public function get_operator_by_title(string $title) : array
+    public function get_operator_by_title(string $title) : string
     {
-        return $this->emoji_operator
+        $operator = $this->emoji_operator
                 ->where('title', $title)
-                ->get();
+                ->first('arithmetic_operator');
+        return !empty($operator) ? $operator->arithmetic_operator : "";
     }
 
 }
