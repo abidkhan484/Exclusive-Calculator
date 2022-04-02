@@ -43,7 +43,12 @@ export default function App() {
     })
       .then(function (response) {
         //handle success
-        setResult(response.data.arithmetic_result);
+        if (response.data.msg) {
+          setResult(response.data.msg);
+        }
+        else {
+          setResult(response.data.arithmetic_result);
+        }
       })
       .catch(function (response) {
         //handle error
@@ -67,16 +72,17 @@ export default function App() {
     >
       <div>
         <input
-          style={{ marginRight: "20px", padding: "5px" }}
+          style={{ marginRight: "20px", padding: "5px", fontSize: "20px",  width: "140px" }}
           pattern="[0-9]*\.?[0-9]*"
           type="text"
           id="number1"
+          placeholder="Enter a number"
           onChange={(e) => setNumber1(e.target.value)}
           value={number1}
         />
 
         <select
-          style={{ padding: "5px" }}
+          style={{ padding: "5px", fontSize: "20px" }}
           value={selectedOperator}
           onChange={(e) => setSelectedOperator(e.target.value)}
         >
@@ -88,10 +94,11 @@ export default function App() {
         </select>
 
         <input
-          style={{ margin: "0 20px", padding: "5px" }}
+          style={{ margin: "0 20px", padding: "5px", fontSize: "20px", width: "140px" }}
           pattern="[0-9]*\.?[0-9]*"
           type="text"
           id="number2"
+          placeholder="Enter a number"
           onChange={(e) => setNumber2(e.target.value)}
           value={number2}
         />
@@ -101,7 +108,7 @@ export default function App() {
         </button>
       </div>
 
-      <div style={{padding: "8px"}}>Result: {result}</div>
+      <div style={{ padding: "8px" }}>Result: {result}</div>
     </div>
   );
 }
