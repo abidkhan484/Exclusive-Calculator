@@ -10,3 +10,8 @@ Open browser and run the application with the below URL
 ```sh
 http://localhost:7777
 ```
+
+Run the below command to cross check npm install
+```sh
+docker exec -it calculator npm install
+```

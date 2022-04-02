@@ -48,9 +48,14 @@ chmod 777 -R ${PWD}/backend/storage
 cd ${PWD}/backend && sail artisan migrate
 ```
 
-5. Run Test
+5. Run Test of the backend
 ```sh
 cd ${PWD}/backend && sail artisan test
+```
+
+6. Run the below command to cross check npm install for the frontend
+```sh
+docker exec -it calculator npm install
 ```
 
 ## Run the application
