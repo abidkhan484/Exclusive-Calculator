@@ -13,5 +13,5 @@ http://localhost:7777
 
 Run the below command to cross check npm install
 ```sh
-docker exec -it calculator npm install
+docker exec calculator npm install
 ```
