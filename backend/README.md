@@ -1,3 +1,8 @@
+## Backend Stacks
+1. Laravel 9.x
+2. PHP 8.1
+3. MySQL 8.0
+
 ## Installation
 
 Inside this directory, run the below command to start Backend server
