@@ -1,7 +1,9 @@
 import axios from "axios";
 import {useState, useEffect} from "react";
+import { CONSTATNTS } from "./Constants";
 
 export default function App() {
+  const base_url = CONSTATNTS['API_BASE_URL_WITH_PORT'];
   const [operators, setExclusiveOperator] = useState([]);
   const [number1, setNumber1] = useState("");
   const [number2, setNumber2] = useState("");
@@ -9,7 +11,7 @@ export default function App() {
   var [selectedOperator, setSelectedOperator] = useState("");
   
   useEffect(() => {
-    axios.get("http://localhost:7007/api/get-all-operators")
+    axios.get(`${base_url}/api/get-all-operators`)
       .then((res) => {
         let result = res.data.data;
         let arithmetic_operators = result.map((operatorArray) => operatorArray['emoji_code']);
@@ -32,7 +34,7 @@ export default function App() {
 
     axios({
       method: "post",
-      url: "http://localhost:7007/api/check-arithmetic-operation",
+      url: `${base_url}/api/check-arithmetic-operation`,
       data: bodyFormData,
       headers: { "Content-Type": "application/json" },
     })
