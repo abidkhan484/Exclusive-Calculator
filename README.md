@@ -77,5 +77,5 @@ http://localhost:7007
 ```
 
 ## Conclusion
-For more info goto the backend readme or frontend readme.
-It is also recommended to check the backend wiki or the frontend wiki.
+For more info goto the [backend readme](backend/README.md) or [frontend readme](frontend/README.md).
+It is also recommended to check the [Github wiki page](https://github.com/abidkhan484/Exclusive-Calculator/wiki) of the repository.
