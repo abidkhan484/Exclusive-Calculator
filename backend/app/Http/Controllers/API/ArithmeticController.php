@@ -4,14 +4,14 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Services\ArithmeticService;
+use App\Services\Interfaces\IArithmeticServices;
 use Illuminate\Support\Facades\Validator;
 
 class ArithmeticController extends Controller
 {
     protected $arithmetic_service;
 
-    public function __construct(ArithmeticService $arithmetic_service)
+    public function __construct(IArithmeticServices $arithmetic_service)
     {
         $this->arithmetic_service = $arithmetic_service;
     }

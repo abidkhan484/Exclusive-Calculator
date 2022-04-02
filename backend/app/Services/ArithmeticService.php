@@ -2,30 +2,16 @@
 
 namespace App\Services;
 
-use App\Repositories\EmojiOperatorRepository;
 use Illuminate\Support\Facades\Log;
+use App\Services\Interfaces\IArithmeticServices;
 
 
-class ArithmeticService
+class ArithmeticService implements IArithmeticServices
 {
-    protected $emoji_operator_repository;
-
-    public function __construct(EmojiOperatorRepository $emoji_operator_repository)
+    public function make_calculation($data)
     {
-        $this->emoji_operator_repository = $emoji_operator_repository;
-    }
-
-    public function get_all_operators() : object
-    {
-        return $this->emoji_operator_repository->get_all_operators();
-    }
-
-    public function get_arithmetic_result($data)
-    {
-        ["number1" => $number1, "number2" => $number2, "emoji_code" => $emoji_code] = $data;
-        $arithmetic_operator = $this->emoji_operator_repository
-                                    ->get_operator_by_emoji_code($emoji_code);
-
+        ["number1" => $number1, "number2" => $number2, "arithmetic_operator" => $arithmetic_operator] = $data;
+        $result = "";
         switch ($arithmetic_operator) {
             case '+':
                 $result = $this->make_addition($number1, $number2);
@@ -45,9 +31,7 @@ class ArithmeticService
                 $result = "Arithmetic operator not found";
                 break;
         }
-
         return $result;
-
     }
 
     public function make_addition($number1, $number2)
@@ -76,5 +60,4 @@ class ArithmeticService
         }
         return $result;
     }
-
 }
