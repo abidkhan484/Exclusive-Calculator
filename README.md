@@ -16,14 +16,20 @@ sudo usermod -aG docker your-user
 ```
 
 ## Setup
-1. Clone the repository.
+1. Clone the repository and goto the project directory
 ```sh
-git clone https://github.com/abidkhan484/Exclusive-Calculator.git
+git clone https://github.com/abidkhan484/Exclusive-Calculator.git && cd Exclusive-Calculator
 ```
 
 2. Set the execute permission to the `runserver.sh` file and execute it with the below commands.
 
 ```sh
+# set the current working directory
+root_directory=${PWD}
+# update env variable accordingly
+cp $root_directory/backend/.env.example backend/.env
+cp $root_directory/frontend/.env.example frontend/.env
+# set the execute permission and run the script
 chmod +x runserver.sh
 ./runserver.sh
 ```
@@ -36,18 +42,28 @@ docker-compose up -d
 
 3. Set the write permission to the storage folder in the backend. 
 ```sh
-chmod 777 -R backend/storage
+chmod 777 -R $root_directory/backend/storage
 ```
 
-4. Run Test
+4. Execute the migrate command.
 ```sh
-sail artisan test
+cd $root_directory/backend && sail artisan migrate
 ```
 
-5. Execute the migrate command
+5. **Please insert the minimal data into database with [Backend Readme](backend/README.md#insert-data-inside-database).** \
+The `Arithmetic Operators` are managed by the `emoji_operators` table.\
+_It will be better to manage the arithmetic operator with an admin panel._
+
+6. Run the below command to cross check npm install for the frontend
 ```sh
-sail artisan migrate
+docker exec calculator npm install
 ```
+
+7. Run Test of the backend
+```sh
+cd $root_directory/backend && sail artisan test
+```
+
 
 ## Run the application
 
@@ -60,3 +76,7 @@ http://localhost:7777
 ```sh
 http://localhost:7007
 ```
+
+## Conclusion
+For more info goto the [backend readme](backend/README.md) or [frontend readme](frontend/README.md).
+It is also recommended to check the [Github wiki page](https://github.com/abidkhan484/Exclusive-Calculator/wiki) of the repository.

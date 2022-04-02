@@ -31,7 +31,7 @@ class ArithmeticApiTest extends TestCase
         $response = $this->post('/api/check-arithmetic-operation', [
             'number1' => 3,
             'number2' => 2,
-            'emoji_code' => 'U+1F47D'
+            'emoji_code' => 'f09f91bd'
         ]);
 
         $response->assertStatus(200);
