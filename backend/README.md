@@ -15,7 +15,7 @@ Open browser and run the application with the below URL
 ```sh
 http://localhost:7007
 ```
-## Setup data inside database
+## Insert data inside database
 It is recommanded to insert data in the emoji operator table. An admin panel is required to create the table.
 
 ```sh

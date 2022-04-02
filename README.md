@@ -45,20 +45,22 @@ docker-compose up -d
 chmod 777 -R $root_directory/backend/storage
 ```
 
-4. Execute the migrate command
+4. Execute the migrate command. **Please insert the minimal data into database with [Backend Readme](backend/README.md#setup-data-inside-database).** The `Arithmetic Operators` are managed by the `emoji_operators` table.
+_It will be better to manage the arithmetic operator with an admin panel._
 ```sh
 cd $root_directory/backend && sail artisan migrate
 ```
 
-5. Run Test of the backend
+5. Run the below command to cross check npm install for the frontend
+```sh
+docker exec -it calculator npm install
+```
+
+6. Run Test of the backend
 ```sh
 cd $root_directory/backend && sail artisan test
 ```
 
-6. Run the below command to cross check npm install for the frontend
-```sh
-docker exec -it calculator npm install
-```
 
 ## Run the application
 
