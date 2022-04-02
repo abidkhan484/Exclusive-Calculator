@@ -1,3 +1,8 @@
+## Frontend Stacks
+1. npm 8.5.5
+2. node v17.8.0
+3. React JS 18.0.0
+
 ## Installation
 
 Inside this directory, run the below command to start Frontend server. 
@@ -13,5 +18,5 @@ http://localhost:7777
 
 Run the below command to cross check npm install
 ```sh
-docker exec -it calculator npm install
+docker exec calculator npm install
 ```
