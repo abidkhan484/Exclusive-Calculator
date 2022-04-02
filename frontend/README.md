@@ -1,6 +1,7 @@
 ## Installation
 
-Inside this directory, run the below command to start Frontend server
+Inside this directory, run the below command to start Frontend server. 
+_Cross check yourself that you are in the frontend directory._
 ```sh
 docker-compose up -d
 ```

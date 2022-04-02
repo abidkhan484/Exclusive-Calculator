@@ -16,14 +16,18 @@ sudo usermod -aG docker your-user
 ```
 
 ## Setup
-1. Clone the repository.
+1. Clone the repository and goto the project directory
 ```sh
-git clone https://github.com/abidkhan484/Exclusive-Calculator.git
+git clone https://github.com/abidkhan484/Exclusive-Calculator.git && cd Exclusive-Calculator
 ```
 
 2. Set the execute permission to the `runserver.sh` file and execute it with the below commands.
 
 ```sh
+# update env variable accordingly
+cp ${PWD}/backend/.env.example backend/.env
+cp ${PWD}/frontend/.env.example frontend/.env
+# set the execute permission and run the script
 chmod +x runserver.sh
 ./runserver.sh
 ```
@@ -36,17 +40,17 @@ docker-compose up -d
 
 3. Set the write permission to the storage folder in the backend. 
 ```sh
-chmod 777 -R backend/storage
+chmod 777 -R ${PWD}/backend/storage
 ```
 
-4. Run Test
+4. Execute the migrate command
 ```sh
-sail artisan test
+cd ${PWD}/backend && sail artisan migrate
 ```
 
-5. Execute the migrate command
+5. Run Test
 ```sh
-sail artisan migrate
+cd ${PWD}/backend && sail artisan test
 ```
 
 ## Run the application
@@ -60,3 +64,7 @@ http://localhost:7777
 ```sh
 http://localhost:7007
 ```
+
+## Conclusion
+For more info goto the backend readme or frontend readme.
+It is also recommended to check the backend wiki or the frontend wiki.
