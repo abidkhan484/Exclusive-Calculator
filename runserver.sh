@@ -15,7 +15,7 @@ docker run --rm \
     laravelsail/php81-composer:latest \
     composer install --ignore-platform-reqs
 
-sail up --remove-orphans -d
+docker-compose up --remove-orphans -d
 cd $root_directory
 
 
