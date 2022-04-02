@@ -56,7 +56,7 @@ _It will be better to manage the arithmetic operator with an admin panel._
 
 6. Run the below command to cross check npm install for the frontend
 ```sh
-docker exec -it calculator npm install
+docker exec calculator npm install
 ```
 
 7. Run Test of the backend
