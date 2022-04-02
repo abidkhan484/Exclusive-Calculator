@@ -27,7 +27,7 @@ export default function App() {
     let bodyFormData = {
       'number1': number1,
       'number2': number2,
-      'emoji_code': selectedOperator,
+      'emoji_code': selectedOperator ?? "",
     };
 
     axios({
@@ -46,6 +46,10 @@ export default function App() {
       });
   };
 
+  const hexToUtf8 = (hex) => {
+    return decodeURIComponent('%' + hex.match(/.{1,2}/g).join('%'));
+  };
+
   return (
     <>
       <div>
@@ -53,7 +57,7 @@ export default function App() {
 
         <select value={selectedOperator} onChange={(e) => setSelectedOperator(e.target.value)}>
           {operators.map((operator) => (
-            <option key={operator} value={operator}>({operator})</option>
+            <option key={operator} value={operator}>{hexToUtf8(operator)}</option>
           ))}
         </select>
 
