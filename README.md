@@ -51,7 +51,7 @@ _It will be better to manage the arithmetic operator with an admin panel._
 cd $root_directory/backend && sail artisan migrate
 ```
 
-5. **Please insert the minimal data into database with [Backend Readme](backend/README.md#setup-data-inside-database).** The `Arithmetic Operators` are managed by the `emoji_operators` table.
+5. **Please insert the minimal data into database with [Backend Readme](backend/README.md#insert-data-inside-database).** The `Arithmetic Operators` are managed by the `emoji_operators` table.
 
 6. Run the below command to cross check npm install for the frontend
 ```sh
