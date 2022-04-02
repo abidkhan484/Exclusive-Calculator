@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Services\Interfaces\IArithmeticServices;
-use App\Services\ArithmeticApiService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(IArithmeticServices::class, ArithmeticApiService::class);
+        //
     }
 
     /**
