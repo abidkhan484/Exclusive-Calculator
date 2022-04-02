@@ -1,7 +1,7 @@
 ## Installation
 
 Inside this directory, run the below command to start Backend server
-_Cross check yourself that you are in the frontend directory._
+_Cross check yourself that you are in the backend directory._
 ```sh
 docker-compose up -d
 ```
@@ -15,7 +15,7 @@ Open browser and run the application with the below URL
 ```sh
 http://localhost:7007
 ```
-
+## Setup data inside database
 It is recommanded to insert data in the emoji operator table. An admin panel is required to create the table.
 
 ```sh
@@ -32,7 +32,7 @@ INSERT INTO `emoji_operators`
     ('ghost','f09f91bb','*'),
     ('scream','f09f98b1','/');
 ```
-
+## Useful commands
 Some useful sail commands
 ```sh
 # To test both unit and feature

@@ -30,6 +30,8 @@ cp ${PWD}/frontend/.env.example frontend/.env
 # set the execute permission and run the script
 chmod +x runserver.sh
 ./runserver.sh
+# set the current working directory
+root_directory=${PWD}
 ```
 
 In case, `bash` is not accessible then the below command is required to run in the folders `backend` and `frontend` individually.
@@ -40,17 +42,17 @@ docker-compose up -d
 
 3. Set the write permission to the storage folder in the backend. 
 ```sh
-chmod 777 -R ${PWD}/backend/storage
+chmod 777 -R $root_directory/backend/storage
 ```
 
 4. Execute the migrate command
 ```sh
-cd ${PWD}/backend && sail artisan migrate
+cd $root_directory/backend && sail artisan migrate
 ```
 
 5. Run Test of the backend
 ```sh
-cd ${PWD}/backend && sail artisan test
+cd $root_directory/backend && sail artisan test
 ```
 
 6. Run the below command to cross check npm install for the frontend
