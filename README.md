@@ -24,14 +24,14 @@ git clone https://github.com/abidkhan484/Exclusive-Calculator.git && cd Exclusiv
 2. Set the execute permission to the `runserver.sh` file and execute it with the below commands.
 
 ```sh
+# set the current working directory
+root_directory=${PWD}
 # update env variable accordingly
-cp ${PWD}/backend/.env.example backend/.env
-cp ${PWD}/frontend/.env.example frontend/.env
+cp $root_directory/backend/.env.example backend/.env
+cp $root_directory/frontend/.env.example frontend/.env
 # set the execute permission and run the script
 chmod +x runserver.sh
 ./runserver.sh
-# set the current working directory
-root_directory=${PWD}
 ```
 
 In case, `bash` is not accessible then the below command is required to run in the folders `backend` and `frontend` individually.
@@ -45,18 +45,20 @@ docker-compose up -d
 chmod 777 -R $root_directory/backend/storage
 ```
 
-4. Execute the migrate command. **Please insert the minimal data into database with [Backend Readme](backend/README.md#setup-data-inside-database).** The `Arithmetic Operators` are managed by the `emoji_operators` table.
+4. Execute the migrate command.
 _It will be better to manage the arithmetic operator with an admin panel._
 ```sh
 cd $root_directory/backend && sail artisan migrate
 ```
 
-5. Run the below command to cross check npm install for the frontend
+5. **Please insert the minimal data into database with [Backend Readme](backend/README.md#setup-data-inside-database).** The `Arithmetic Operators` are managed by the `emoji_operators` table.
+
+6. Run the below command to cross check npm install for the frontend
 ```sh
 docker exec -it calculator npm install
 ```
 
-6. Run Test of the backend
+7. Run Test of the backend
 ```sh
 cd $root_directory/backend && sail artisan test
 ```
