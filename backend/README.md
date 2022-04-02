@@ -50,3 +50,21 @@ docker run --rm \
     laravelsail/php81-composer:latest \
     composer install --ignore-platform-reqs
 ```
+### APIs:
+
+APIs with required information are given below.
+
+1. GET API to fetch all the operators from the database.
+```sh
+curl -X GET 'http://localhost:7007/api/get-all-operators'
+```
+2. POST API to calculate the result.
+```sh
+curl -X POST 'http://localhost:7007/api/check-arithmetic-operation' \
+  --header 'Content-Type: application/json' \
+  -d '{
+      "number1" : 1,
+      "number2" : 0,
+      "emoji_code" : "f09f91bd"
+  }'
+```
